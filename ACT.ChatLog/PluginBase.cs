@@ -38,15 +38,16 @@ namespace ACT.ChatLog
             { new ChatLogArgs("0016", "LS7  ", Color.LightGreen, true) },
             { new ChatLogArgs("0017", "LS8  ", Color.LightGreen, true) },
             { new ChatLogArgs("0018", "FC   ", Color.LightSteelBlue, true) },
+            { new ChatLogArgs("001C", "EMOTE", Color.White, true) }, //カスタムエモート
             { new ChatLogArgs("001D", "EMOTE", Color.White, true) },
             { new ChatLogArgs("0025", "CWLS1", Color.LightGreen, true) },
-            { new ChatLogArgs("0026", "CWLS2", Color.LightGreen, true) },
-            { new ChatLogArgs("0027", "CWLS3", Color.LightGreen, true) },
-            { new ChatLogArgs("0028", "CWLS4", Color.LightGreen, true) },
-            { new ChatLogArgs("0029", "CWLS5", Color.LightGreen, true) },
-            { new ChatLogArgs("002A", "CWLS6", Color.LightGreen, true) },
-            { new ChatLogArgs("002B", "CWLS7", Color.LightGreen, true) },
-            { new ChatLogArgs("002C", "CWLS8", Color.LightGreen, true) },
+            { new ChatLogArgs("0065", "CWLS2", Color.LightGreen, true) },
+            { new ChatLogArgs("0066", "CWLS3", Color.LightGreen, true) },
+            { new ChatLogArgs("0067", "CWLS4", Color.LightGreen, true) },
+            { new ChatLogArgs("0068", "CWLS5", Color.LightGreen, true) },
+            { new ChatLogArgs("0069", "CWLS6", Color.LightGreen, true) },
+            { new ChatLogArgs("006A", "CWLS7", Color.LightGreen, true) },
+            { new ChatLogArgs("006B", "CWLS8", Color.LightGreen, true) },
             { new ChatLogArgs("2245", "FC   ", Color.White, true) }, //FCのシステム情報とか
             { new ChatLogArgs("2246", "SYS  ", Color.White, true) }  //DICEとかIN、OUTとか
         };
