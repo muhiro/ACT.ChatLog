@@ -1,1 +1,2 @@
 # ACT.ChatLog
+チャットログを表示したりテキストファイルに保存するAdvanced Combat Trackerのプラグイン
