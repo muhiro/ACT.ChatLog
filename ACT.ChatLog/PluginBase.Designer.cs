@@ -31,6 +31,7 @@
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.textXpos1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxFront = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,28 +43,27 @@
             this.textSaveDirectory = new System.Windows.Forms.TextBox();
             this.textYpos1 = new System.Windows.Forms.TextBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.checkBoxFront = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonBrowse
             // 
-            this.buttonBrowse.Location = new System.Drawing.Point(485, 18);
+            this.buttonBrowse.Location = new System.Drawing.Point(522, 18);
             this.buttonBrowse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(100, 29);
-            this.buttonBrowse.TabIndex = 0;
+            this.buttonBrowse.TabIndex = 2;
             this.buttonBrowse.Text = "参照";
             this.buttonBrowse.UseVisualStyleBackColor = true;
             this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
             // textXpos1
             // 
-            this.textXpos1.Location = new System.Drawing.Point(336, 58);
+            this.textXpos1.Location = new System.Drawing.Point(373, 58);
             this.textXpos1.Margin = new System.Windows.Forms.Padding(4);
             this.textXpos1.Name = "textXpos1";
             this.textXpos1.Size = new System.Drawing.Size(39, 22);
-            this.textXpos1.TabIndex = 1;
+            this.textXpos1.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -84,42 +84,55 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(593, 329);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(630, 434);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ChatLog";
+            // 
+            // checkBoxFront
+            // 
+            this.checkBoxFront.AutoSize = true;
+            this.checkBoxFront.Checked = true;
+            this.checkBoxFront.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFront.Location = new System.Drawing.Point(170, 60);
+            this.checkBoxFront.Name = "checkBoxFront";
+            this.checkBoxFront.Size = new System.Drawing.Size(110, 19);
+            this.checkBoxFront.TabIndex = 4;
+            this.checkBoxFront.Text = "最前面にする";
+            this.checkBoxFront.UseVisualStyleBackColor = true;
+            this.checkBoxFront.CheckStateChanged += new System.EventHandler(this.checkBoxFront_CheckStateChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(521, 61);
+            this.label4.Location = new System.Drawing.Point(558, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 15);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 5;
             this.label4.Text = "W";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(451, 62);
+            this.label3.Location = new System.Drawing.Point(488, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 15);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 6;
             this.label3.Text = "H";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 62);
+            this.label2.Location = new System.Drawing.Point(419, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(16, 15);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Y";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(313, 62);
+            this.label1.Location = new System.Drawing.Point(350, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 15);
             this.label1.TabIndex = 8;
@@ -130,26 +143,26 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 96);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 101);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(585, 229);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(622, 329);
+            this.flowLayoutPanel1.TabIndex = 9;
             // 
             // textWsize1
             // 
-            this.textWsize1.Location = new System.Drawing.Point(546, 58);
+            this.textWsize1.Location = new System.Drawing.Point(583, 58);
             this.textWsize1.Margin = new System.Windows.Forms.Padding(4);
             this.textWsize1.Name = "textWsize1";
             this.textWsize1.Size = new System.Drawing.Size(39, 22);
-            this.textWsize1.TabIndex = 6;
+            this.textWsize1.TabIndex = 8;
             // 
             // textHsize1
             // 
-            this.textHsize1.Location = new System.Drawing.Point(475, 58);
+            this.textHsize1.Location = new System.Drawing.Point(512, 58);
             this.textHsize1.Margin = new System.Windows.Forms.Padding(4);
             this.textHsize1.Name = "textHsize1";
             this.textHsize1.Size = new System.Drawing.Size(39, 22);
-            this.textHsize1.TabIndex = 5;
+            this.textHsize1.TabIndex = 7;
             // 
             // checkboxOverlay
             // 
@@ -158,7 +171,7 @@
             this.checkboxOverlay.Margin = new System.Windows.Forms.Padding(4);
             this.checkboxOverlay.Name = "checkboxOverlay";
             this.checkboxOverlay.Size = new System.Drawing.Size(154, 19);
-            this.checkboxOverlay.TabIndex = 4;
+            this.checkboxOverlay.TabIndex = 3;
             this.checkboxOverlay.Text = "Overlayを有効にする";
             this.checkboxOverlay.UseVisualStyleBackColor = true;
             this.checkboxOverlay.CheckStateChanged += new System.EventHandler(this.checkboxOverlay_CheckStateChanged);
@@ -168,29 +181,16 @@
             this.textSaveDirectory.Location = new System.Drawing.Point(8, 22);
             this.textSaveDirectory.Margin = new System.Windows.Forms.Padding(4);
             this.textSaveDirectory.Name = "textSaveDirectory";
-            this.textSaveDirectory.Size = new System.Drawing.Size(469, 22);
-            this.textSaveDirectory.TabIndex = 3;
+            this.textSaveDirectory.Size = new System.Drawing.Size(506, 22);
+            this.textSaveDirectory.TabIndex = 1;
             // 
             // textYpos1
             // 
-            this.textYpos1.Location = new System.Drawing.Point(405, 58);
+            this.textYpos1.Location = new System.Drawing.Point(442, 58);
             this.textYpos1.Margin = new System.Windows.Forms.Padding(4);
             this.textYpos1.Name = "textYpos1";
             this.textYpos1.Size = new System.Drawing.Size(39, 22);
-            this.textYpos1.TabIndex = 2;
-            // 
-            // checkBoxFront
-            // 
-            this.checkBoxFront.AutoSize = true;
-            this.checkBoxFront.Checked = true;
-            this.checkBoxFront.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxFront.Location = new System.Drawing.Point(170, 60);
-            this.checkBoxFront.Name = "checkBoxFront";
-            this.checkBoxFront.Size = new System.Drawing.Size(110, 19);
-            this.checkBoxFront.TabIndex = 12;
-            this.checkBoxFront.Text = "最前面にする";
-            this.checkBoxFront.UseVisualStyleBackColor = true;
-            this.checkBoxFront.CheckStateChanged += new System.EventHandler(this.checkBoxFront_CheckStateChanged);
+            this.textYpos1.TabIndex = 6;
             // 
             // PluginBase
             // 
@@ -199,7 +199,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PluginBase";
-            this.Size = new System.Drawing.Size(647, 379);
+            this.Size = new System.Drawing.Size(685, 484);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

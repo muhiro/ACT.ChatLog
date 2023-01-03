@@ -16,21 +16,21 @@ namespace ACT.ChatLog
         public Overlay()
         {
             InitializeComponent();
+
             this.OnLogLineRead += Overlay_OnLogLineRead;
 
             this.StartPosition = FormStartPosition.Manual;
             //this.TransparencyKey = this.BackColor;
             this.Opacity = 0.75D;
-            this.panel1.BackColor = Color.White;
+            this.panel1.BackColor = Color.Black;
 
             this.BackColor = Color.Black;
-            this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.TopMost = true;
 
             this.richTextChatLog.BackColor = Color.Black;
             this.richTextChatLog.ForeColor = Color.White;
             this.richTextChatLog.DetectUrls = true;
-
         }
 
         public void SetChatLogArgsList(List<ChatLogArgs> argslist)
@@ -99,32 +99,41 @@ namespace ACT.ChatLog
             System.Diagnostics.Process.Start(e.LinkText);
         }
 
-        private Point mousePoint;
-        /// <summary>
-        /// フォーム上のすべてのコントローラーはこれを追加
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Overlay_MouseDown(object sender, MouseEventArgs e)
+        private Point mouseMovePoint;
+        private void OverlayMove_MouseDown(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
             {
                 //位置を記憶する
-                mousePoint = new Point(e.X, e.Y);
+                mouseMovePoint = new Point(e.X, e.Y);
             }
         }
 
-        /// <summary>
-        /// フォーム上のすべてのコントローラーはこれを追加
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Overlay_MouseMove(object sender, MouseEventArgs e)
+        private void OverlayMove_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
             {
-                this.Left += e.X - mousePoint.X;
-                this.Top += e.Y - mousePoint.Y;
+                this.Left += e.X - mouseMovePoint.X;
+                this.Top += e.Y - mouseMovePoint.Y;
+            }
+        }
+
+        private Point mouseResizePoint;
+        private void OverlayResize_MouseDown(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                //位置を記憶する
+                mouseResizePoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void OverlayResize_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                this.Width += e.X - mouseResizePoint.X;
+                this.Height += e.Y - mouseResizePoint.Y;
             }
         }
     }

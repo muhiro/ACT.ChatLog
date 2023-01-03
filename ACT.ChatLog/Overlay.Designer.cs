@@ -33,7 +33,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.クリアToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxResize = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResize)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextChatLog
@@ -73,8 +75,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(740, 20);
             this.panel1.TabIndex = 1;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Overlay_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Overlay_MouseMove);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OverlayMove_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OverlayMove_MouseMove);
+            // 
+            // pictureBoxResize
+            // 
+            this.pictureBoxResize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxResize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBoxResize.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.pictureBoxResize.Image = global::ACT.ChatLog.Properties.Resources.resize;
+            this.pictureBoxResize.Location = new System.Drawing.Point(710, 281);
+            this.pictureBoxResize.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBoxResize.Name = "pictureBoxResize";
+            this.pictureBoxResize.Size = new System.Drawing.Size(20, 20);
+            this.pictureBoxResize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxResize.TabIndex = 2;
+            this.pictureBoxResize.TabStop = false;
+            this.pictureBoxResize.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OverlayResize_MouseDown);
+            this.pictureBoxResize.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OverlayResize_MouseMove);
             // 
             // Overlay
             // 
@@ -82,15 +100,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(740, 311);
+            this.Controls.Add(this.pictureBoxResize);
             this.Controls.Add(this.richTextChatLog);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Overlay";
             this.Text = "ChatLogOverlay";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Overlay_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Overlay_MouseMove);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OverlayMove_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OverlayMove_MouseMove);
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResize)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -100,5 +121,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem クリアToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBoxResize;
     }
 }
