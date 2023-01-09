@@ -71,7 +71,11 @@ namespace ACT.ChatLog
             var length = args.ChatLogLine.Length;
 
             Debug.WriteLine(args.ChatLogLine);
-            this.richTextChatLog.AppendText(args.ChatLogLine + "\n");
+            if (this.richTextChatLog.TextLength > 0)
+            {
+                this.richTextChatLog.AppendText("\n");
+            }
+            this.richTextChatLog.AppendText(args.ChatLogLine);
             this.richTextChatLog.Focus();
             this.richTextChatLog.ScrollToCaret();
             this.richTextChatLog.DetectUrls = true;
