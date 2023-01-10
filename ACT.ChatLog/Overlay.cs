@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace ACT.ChatLog
@@ -74,6 +75,7 @@ namespace ACT.ChatLog
             if (this.richTextChatLog.TextLength > 0)
             {
                 this.richTextChatLog.AppendText("\n");
+                start += 1;
             }
             this.richTextChatLog.AppendText(args.ChatLogLine);
             this.richTextChatLog.Focus();
@@ -83,9 +85,24 @@ namespace ACT.ChatLog
             try
             {
                 // ハイライト化
-                var highlighter = new SyntaxHighlighter(this.ChatLogArgsList);
-                string highlighterRtf = highlighter.GetRtf(this.richTextChatLog.Text, this.richTextChatLog.Font);
-                this.richTextChatLog.Rtf = highlighterRtf;
+                if (!string.IsNullOrEmpty(this.richTextChatLog.Text))
+                {
+                    // 各パターンに一致する文字色を設定
+                    foreach (var syntax in this.ChatLogArgsList)
+                    {
+                        if (args.ChatLogType.Equals(syntax.Key))
+                        {
+                            this.richTextChatLog.Select(start, length);
+                            this.richTextChatLog.SelectionColor = syntax.Color;
+                            break;
+                        }
+                        else
+                        {
+                            this.richTextChatLog.Select(start, length);
+                            this.richTextChatLog.SelectionColor = Color.White;
+                        }
+                    }
+                }
             }
             finally
             {

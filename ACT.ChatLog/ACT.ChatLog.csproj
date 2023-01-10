@@ -75,7 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SyntaxHighlighter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Overlay.resx">
