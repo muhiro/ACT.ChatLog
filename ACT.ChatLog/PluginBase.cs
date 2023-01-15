@@ -16,7 +16,11 @@ namespace ACT.ChatLog
     {
         Overlay formOverlay = null;
 
+#if DEBUG
+        string settingsFile = null;
+#else //DEBUG
         string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, "Config\\" + Assembly.GetExecutingAssembly().GetName().Name + ".config.xml");
+#endif //DEBUG
         SettingsSerializer xmlSettings;
         string TextLogName;
 
@@ -149,7 +153,9 @@ namespace ACT.ChatLog
 
             TextLogName = $"{DateTime.Now:yyyy_MM_dd_HH.mm.ss}.txt";
 
+#if !DEBUG
             ActGlobals.oFormActMain.OnLogLineRead += OnLogLineRead;
+#endif //DEBUG
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
@@ -245,6 +251,10 @@ namespace ACT.ChatLog
             SaveSettings();
         }
 
+        public void OnLogLineReadp(bool isImport, LogLineEventArgs logInfo)
+        {
+            this.OnLogLineRead(isImport, logInfo);
+        }
         private void OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
             if (isImport) return;
@@ -355,20 +365,23 @@ namespace ACT.ChatLog
         }
         void SaveSettings()
         {
-            FileStream fs = new FileStream(settingsFile, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
-            XmlTextWriter xWriter = new XmlTextWriter(fs, Encoding.UTF8);
-            xWriter.Formatting = Formatting.Indented;
-            xWriter.Indentation = 1;
-            xWriter.IndentChar = '\t';
-            xWriter.WriteStartDocument(true);
-            xWriter.WriteStartElement("Config");    // <Config>
-            xWriter.WriteStartElement("SettingsSerializer");    // <Config><SettingsSerializer>
-            xmlSettings.ExportToXml(xWriter);   // Fill the SettingsSerializer XML
-            xWriter.WriteEndElement();  // </SettingsSerializer>
-            xWriter.WriteEndElement();  // </Config>
-            xWriter.WriteEndDocument(); // Tie up loose ends (shouldn't be any)
-            xWriter.Flush();    // Flush the file buffer to disk
-            xWriter.Close();
+            if (File.Exists(settingsFile))
+            {
+                FileStream fs = new FileStream(settingsFile, FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
+                XmlTextWriter xWriter = new XmlTextWriter(fs, Encoding.UTF8);
+                xWriter.Formatting = Formatting.Indented;
+                xWriter.Indentation = 1;
+                xWriter.IndentChar = '\t';
+                xWriter.WriteStartDocument(true);
+                xWriter.WriteStartElement("Config");    // <Config>
+                xWriter.WriteStartElement("SettingsSerializer");    // <Config><SettingsSerializer>
+                xmlSettings.ExportToXml(xWriter);   // Fill the SettingsSerializer XML
+                xWriter.WriteEndElement();  // </SettingsSerializer>
+                xWriter.WriteEndElement();  // </Config>
+                xWriter.WriteEndDocument(); // Tie up loose ends (shouldn't be any)
+                xWriter.Flush();    // Flush the file buffer to disk
+                xWriter.Close();
+            }
         }
 
         private void pictureBox_Click(object sender, EventArgs e)

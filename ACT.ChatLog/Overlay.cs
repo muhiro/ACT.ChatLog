@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace ACT.ChatLog
@@ -64,9 +63,11 @@ namespace ACT.ChatLog
         {
             if (this.richTextChatLog.Lines.Length > this.MAX_ROW)
             {
-                int st_idx = this.richTextChatLog.GetFirstCharIndexFromLine(1);
-                int nx_idx = this.richTextChatLog.GetFirstCharIndexFromLine(2);
-                this.richTextChatLog.Text = this.richTextChatLog.Text.Remove(st_idx, nx_idx - st_idx);
+                this.richTextChatLog.ReadOnly = false;
+                this.richTextChatLog.SelectionStart = this.richTextChatLog.GetFirstCharIndexFromLine(0);
+                this.richTextChatLog.SelectionLength = this.richTextChatLog.Lines[0].Length + 1;
+                this.richTextChatLog.SelectedText = string.Empty;
+                this.richTextChatLog.ReadOnly = true;
             }
             var start = this.richTextChatLog.Text.Length;
             var length = args.ChatLogLine.Length;
