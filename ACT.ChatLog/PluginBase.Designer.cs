@@ -84,7 +84,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(630, 434);
+            this.groupBox1.Size = new System.Drawing.Size(780, 400);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ChatLog";
@@ -143,9 +143,9 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 101);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 87);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(622, 329);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(772, 309);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // textWsize1
@@ -199,7 +199,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PluginBase";
-            this.Size = new System.Drawing.Size(685, 484);
+            this.Size = new System.Drawing.Size(934, 498);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

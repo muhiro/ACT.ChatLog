@@ -85,14 +85,16 @@ namespace ACT.ChatLog
             { new ChatLogArgs("0840", "COMPLE", Color.White, true) }, //コンプリートタイム
             { new ChatLogArgs("0B3A", "CONTEN", Color.White, true) }, //討伐情報
 
+            { new ChatLogArgs("0BB9", "SYSQUE", Color.White, true) }, //クエスト受注
 
-            //{ new ChatLogArgs("0BB9", "SYS   ", Color.White, true) }, //クエスト受注
-
-            //{ new ChatLogArgs("2040", "SYS   ", Color.White, true) }, //成長/修得情報
+            { new ChatLogArgs("2040", "SYSACQ", Color.White, true) }, //成長/修得情報
 
             { new ChatLogArgs("0245", "FCINF ", Color.White, true) }, //FCアナウンス
+            
+            { new ChatLogArgs("1039", "PTINOU", Color.White, true) }, //PTIN、OUTとか
+            { new ChatLogArgs("1146", "FCINOU", Color.White, true) }, //FCIN、OUTとか
             { new ChatLogArgs("2245", "FCSYS ", Color.White, true) }, //FCシステム情報とか
-            { new ChatLogArgs("2246", "SYSIO ", Color.White, true) }  //DICEとかIN、OUTとか
+            { new ChatLogArgs("2246", "SYS   ", Color.White, true) }  //DICEとかIN、OUTとか
         };
 
 
