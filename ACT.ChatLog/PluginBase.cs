@@ -16,11 +16,7 @@ namespace ACT.ChatLog
     {
         Overlay formOverlay = null;
 
-#if DEBUG
         string settingsFile = null;
-#else //DEBUG
-        string settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, "Config\\" + Assembly.GetExecutingAssembly().GetName().Name + ".config.xml");
-#endif //DEBUG
         SettingsSerializer xmlSettings;
         string TextLogName;
 
@@ -100,6 +96,7 @@ namespace ACT.ChatLog
 
         public PluginBase()
         {
+            if (ActGlobals.oFormActMain != null) { settingsFile = Path.Combine(ActGlobals.oFormActMain.AppDataFolder.FullName, "Config\\" + Assembly.GetExecutingAssembly().GetName().Name + ".config.xml"); }
             InitializeComponent();
 
 
@@ -141,7 +138,7 @@ namespace ACT.ChatLog
 
         public void DeInitPlugin()
         {
-            ActGlobals.oFormActMain.OnLogLineRead -= OnLogLineRead;
+            if (ActGlobals.oFormActMain != null) { ActGlobals.oFormActMain.OnLogLineRead -= OnLogLineRead; }
             formOverlay.Close();
         }
 
@@ -155,9 +152,7 @@ namespace ACT.ChatLog
 
             TextLogName = $"{DateTime.Now:yyyy_MM_dd_HH.mm.ss}.txt";
 
-#if !DEBUG
-            ActGlobals.oFormActMain.OnLogLineRead += OnLogLineRead;
-#endif //DEBUG
+            if (ActGlobals.oFormActMain != null) { ActGlobals.oFormActMain.OnLogLineRead += OnLogLineRead; }
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
