@@ -113,8 +113,8 @@ namespace ACT.ChatLog
 
 
                 checkboxLogType.Name = "checkbox" + chatlog.Key;
-                checkboxLogType.Text = chatlog.Initials;
-                checkboxLogType.Width = 78;
+                checkboxLogType.Text = chatlog.Key + ":" + chatlog.Initials;
+                checkboxLogType.Width = 130;
                 checkboxLogType.Padding = new Padding(0, 0, 0, 0);
                 checkboxLogType.Margin = new Padding(0, 0, 0, 0);
                 checkboxLogType.Checked = chatlog.Checked;
